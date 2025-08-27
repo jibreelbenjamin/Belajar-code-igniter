@@ -1,3 +1,4 @@
+<a href="<?= base_url('index.php/anggota/tambah') ?>">Tambah anggota baru</a>
 <table>
     <tr>
         <td>ID</td>

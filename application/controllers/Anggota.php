@@ -8,6 +8,21 @@ class Anggota extends CI_Controller{
     public function index(){
         echo 'data anggota';
     }
+
+    public function tambah(){
+        $data['judul'] = 'Data Anggota Perpustakaan';
+        $this->load->view('template/header.php', $data);
+        $this->load->view('anggota/form_tambah');
+        $this->load->view('template/footer.php');
+    }
+
+    public function insert(){
+        $anggota = $this->input->post('anggota');
+        $alamat = $this->input->post('alamat');
+        
+        $this->M_Anggota->save($anggota, $alamat);
+        redirect('index.php/anggota');
+    }
     
     public function select(){
         $data['judul'] = 'Data Anggota Perpustakaan';
